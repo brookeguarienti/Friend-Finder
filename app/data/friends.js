@@ -1,4 +1,4 @@
-var friendsArray =[
+var friends =[
 {
   "name":"John",
   "photo":"https://avatars2.githubusercontent.com/u/58530885?s=460&u=1c48663e7d446c5681597b25be968df8ff04c131&v=4",
@@ -81,4 +81,4 @@ var friendsArray =[
   }
 ];
 
-module.exports = friendsArray;
+module.exports = friends;

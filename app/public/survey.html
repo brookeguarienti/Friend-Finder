@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <title>Friends Finder Survey</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
 		<nav>
 			<div class="nav-wrapper">
 				<i class="fa fa-address-book-o fa-5x" aria-hidden="true" id=logo-icon></i>
-				<a href="index.html" class="brand-logo" id="logo">Friend Finder</a>
+				<a href="/index" class="brand-logo" id="logo">Friend Finder</a>
 				<ul class="right hide-on-med-and-down" id="head-nav-links">
 					<li><a href="#">Survey</a></li>
 					<li><a href="../data/friends.js">API Friends List</a></li>
@@ -202,63 +203,69 @@
                     </div>
             
                 </div>
-            <!-- begin JavaScript and jQuery -->
-                <script type="text/javascript">
             
-                    $("#submitBtn").on("click", function (event) {
-                        event.preventDefault();
-                        console.log("hello");
-                        
-                        var valid = true;
-                        
-                        if ($("#name").val() === "" || $("#userPhoto").val() === "") {
-                            valid = false;
-                        } else if ($("#question1").val() === "empty" || $("#question2").val() === "empty" || $("#question3").val() === "empty" || $("#question4").val() === "empty" || $("#question5").val() === "empty" || $("#question6").val() === "empty" || $("#question7").val() === "empty" || $("#question8").val() === "empty" || $("#question9").val() === "empty" || $("#question10").val() === "empty") {
-                        }
-            
-                        if (valid === true) {
-                            var newUser = {
-                                name: $("#name").val(),
-                                photo: $("#userPhoto").val(),
-                                scores: [
-                                    $("#question1").val(),
-                                    $("#question2").val(),
-                                    $("#question3").val(),
-                                    $("#question4").val(),
-                                    $("#question5").val(),
-                                    $("#question6").val(),
-                                    $("#question7").val(),
-                                    $("#question8").val(),
-                                    $("#question9").val(),
-                                    $("#question10").val()
-                                ]
-                            };
-                            
-            
-                            // var currentURL = window.location.origin;
-            
-                            // AJAX call for receiving data after POST
-                            $.post("/api/friendsData", newUser, function (data) {
-                                $("#bestFriend").text(data.name);
-                                $("bestFriendPhoto").attr("src", data.photo);
-                                $("#bestFriendModal").modal("toggle");
-                            });
-                        } else {
-                            alert("Survey is not finished");
-                        }
-                        
-                    });
-            
-                </script>
                 </div>
             </div>
         </div>
     </div>
+
+    
 </main>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<!--   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+<!-- begin JavaScript and jQuery -->
+<script type="text/javascript">
+            
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        console.log("hello");
+        
+        var valid = true;
+        
+        if ($("#userName").val() === "" || $("#userPhoto").val() === "") {
+            valid = false;
+        } else if ($("#question1").val() === "" || $("#question2").val() === "" || $("#question3").val() === "" || $("#question4").val() === "" || $("#question5").val() === "" || $("#question6").val() === "" || $("#question7").val() === "" || $("#question8").val() === "" || $("#question9").val() === "" || $("#question10").val() === "") {
+            valid = false;
+        }
+        
+        
+        if (valid === true) {
+            var newUser = {
+                name: $("#userName").val(),
+                photo: $("#userPhoto").val(),
+                scores: [
+                    $("#question1").val(),
+                    $("#question2").val(),
+                    $("#question3").val(),
+                    $("#question4").val(),
+                    $("#question5").val(),
+                    $("#question6").val(),
+                    $("#question7").val(),
+                    $("#question8").val(),
+                    $("#question9").val(),
+                    $("#question10").val()
+                ]
+            };
+            
+
+            // var currentURL = window.location.origin;
+            
+            
+            // AJAX call for receiving data after POST
+
+
+            $.post("/api/friends", newUser, function (data) {
+                console.log($("#bestFriend").text(data.name));
+                
+                $("#bestFriend").text(data.name);
+                $("#bestFriendPhoto").attr("src", data.photo);
+                $("#bestFriendModal").modal("toggle");
+            });
+        } else {
+            alert("Survey is not finished");
+        }
+        console.log(newUser);
+        
+    });
+
+</script>
 </body>
 </html>
