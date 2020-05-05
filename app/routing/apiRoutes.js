@@ -30,5 +30,8 @@ module.exports = function (app) {
     friends.push(data);
 
     res.json(friends[bestMatch]);
+
+    console.log(friends);
+    
   });
 };

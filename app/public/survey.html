@@ -6,9 +6,16 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+    />
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <title>Friends Finder Survey</title>
 </head>
@@ -16,12 +23,14 @@
     <header>
 		<nav>
 			<div class="nav-wrapper">
-				<i class="fa fa-address-book-o fa-5x" aria-hidden="true" id=logo-icon></i>
-				<a href="/index" class="brand-logo" id="logo">Friend Finder</a>
-				<ul class="right hide-on-med-and-down" id="head-nav-links">
+                <!-- <i class="fa fa-address-book-o fa-5x" aria-hidden="true" id=logo-icon></i> -->
+                <div class="jumotron">
+				    <a href="/index" class="brand-logo" id="logo">Friend Finder</a>
+				    <!-- <ul class="right hide-on-med-and-down" id="head-nav-links">
 					<li><a href="#">Survey</a></li>
-					<li><a href="../data/friends.js">API Friends List</a></li>
-				</ul>
+					<li><a href="../data/friends.js">API Friends List</a></li> -->
+                    <!-- </ul> --> 
+                </div>
 			</div>
 		</nav>
     </header>
@@ -33,17 +42,19 @@
                     <div class="divider"></div>
 
                     <h3>About You</h3>
-
-                    <div class="input-field col-sm-6">
+                    <div class="container">
+                    <div class="input-field col-sm-4">
                         <h5>Name (Required)</h5>
                         <input type="text" class="form-control" placeholder="Your Name Here" id="userName">
                     </div>
+                    </div>  
 
-                    <div class="input-field col s6">
+                    <div class="container">
+                    <div class="input-field col-sm-4">
                         <h5>Link to Photo Image (Required)</h5>
                         <input type="text" class="form-control" placeholder="Photo Link Here" id="userPhoto">
                     </div>
-
+                    </div>
                     <!-- Survey Questions -->
                     <div class="input-field col s12">
                         <h3>Question 1</h3>
@@ -208,7 +219,11 @@
             </div>
         </div>
     </div>
-
+    <footer class="footer">
+        <div class="container">
+          <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/brookeguarienti/Friend-Finder" target="_blank">GitHub Repo</a></p>
+        </div>
+      </footer>
     
 </main>
 <!-- begin JavaScript and jQuery -->
