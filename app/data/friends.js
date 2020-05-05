@@ -1,3 +1,4 @@
+// friends array - holds all friends within the application
 var friends =[
 {
   "name":"John",
@@ -80,5 +81,5 @@ var friends =[
       ]
   }
 ];
-
+// export friends array
 module.exports = friends;

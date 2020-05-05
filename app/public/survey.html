@@ -38,17 +38,19 @@
         <div class="row">
             <div class="col-sm-12 main">
                 <div id="main-content">
+                    <!-- title -->
                     <h1>Survey Questions</h1>
                     <div class="divider"></div>
-
+                    <!-- header -->
                     <h3>About You</h3>
+                    <!-- Name form -->
                     <div class="container">
                     <div class="input-field col-sm-4">
                         <h5>Name (Required)</h5>
                         <input type="text" class="form-control" placeholder="Your Name Here" id="userName">
                     </div>
                     </div>  
-
+                    <!-- Photo form -->
                     <div class="container">
                     <div class="input-field col-sm-4">
                         <h5>Link to Photo Image (Required)</h5>
@@ -192,7 +194,7 @@
                     </div>
             
                 </div>
-            
+                <!-- Modal -->
                 <div id="bestFriendModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -219,6 +221,7 @@
             </div>
         </div>
     </div>
+    <!-- footer with friends api array and github repo -->
     <footer class="footer">
         <div class="container">
           <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/brookeguarienti/Friend-Finder" target="_blank">GitHub Repo</a></p>
@@ -226,7 +229,7 @@
       </footer>
     
 </main>
-<!-- begin JavaScript and jQuery -->
+<!-- JavaScript and jQuery -->
 <script type="text/javascript">
             
     $("#submitBtn").on("click", function (event) {
@@ -260,13 +263,7 @@
                 ]
             };
             
-
-            // var currentURL = window.location.origin;
-            
-            
             // AJAX call for receiving data after POST
-
-
             $.post("/api/friends", newUser, function (data) {
                 console.log($("#bestFriend").text(data.name));
                 
