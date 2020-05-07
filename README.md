@@ -17,6 +17,8 @@ The app will then present a name and image of the best friend chosen based on co
 
 Should the user not enter their a name, image address, or fill out all the questions - then they will receive and error message.
 
+<img src= "assets/error-msg.png">
+
 The user can see that they have been added to the Friend List API by selecting the link in the bottom left corner. Scroll down to the bottom where the latest user will be listed.
 
 
